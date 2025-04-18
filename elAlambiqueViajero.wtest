@@ -1,0 +1,16 @@
+import ciudadesYRecuerdos.*
+import elAlambiqueViajero.*
+
+test "Cantidad de lugares visitados por Luke" {
+    luke.cargarCombustibleParaIrA_YactualizarDesitno(estocolmo)
+    luke.viajarA_(estocolmo)
+    assert.that(luke.cantidadDeLugaresVisitados() == 1)
+}
+
+test "El recuerdo que trajo de su último viaje coincide con el recuerdo que esa
+      ciudad tiene como tal" {
+    luke.cargarCombustibleParaIrA_YactualizarDesitno(lasVegas)
+    luke.viajarA_(lasVegas)
+    luke.ciudadDestino().cuidadHomenajeadaActualizada(bagdad)
+    assert.that(luke.ultimoRecuerdo() == bidon)
+}
