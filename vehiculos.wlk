@@ -6,7 +6,6 @@ object alambique {
 
     method combustible() {return combustible}
     method puedeViajar() {return combustible >= luke.ciudadDestino().distanciaEnKm()}
-
     method quemarCombustible() {
         combustible = combustible - luke.ciudadDestino().distanciaEnKm()
         }
@@ -22,5 +21,11 @@ object espantomovil {
 
     method combustible() {return combustible}
     method puedeViajar() {return combustible >= luke.ciudadDestino().distanciaEnKm()}
-    method quemarCombustible() {combustible = combustible - luke.ciudadDestino()}
+    method quemarCombustible() {
+        combustible = combustible - luke.ciudadDestino().distanciaEnKm()
+        }
+
+    method cargar_DeCombustible(cantidad) {
+        combustible = combustible + cantidad
+    }
 }
